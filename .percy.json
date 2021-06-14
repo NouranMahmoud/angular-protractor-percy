@@ -1,0 +1,26 @@
+{
+  "version": 2,
+  "snapshot": {
+    "widths": [
+      375,
+      1280,
+      1920
+    ],
+    "min-height": 1024
+  },
+  "static": {
+    "base-url": "http://localhost:4200/",
+    "files": "**/*.html,**/*.scss,**/*.css,**/*.woff,**/*.svg,**/*.js,**/*.woff2,**/*.ico",
+    "ignore": "**/*.htm"
+  },
+  "discovery": {
+    "allowed-hostnames": [
+      "http://localhost:4200"
+    ]
+    
+  },
+  "upload": {
+    "files": "**/*.{png,jpg,jpeg}",
+    "ignore": ""
+  }
+}

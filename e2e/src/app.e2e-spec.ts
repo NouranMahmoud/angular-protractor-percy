@@ -1,17 +1,14 @@
 import { AppPage } from './app.po';
 import { browser, logging } from 'protractor';
+const percySnapshot = require('@percy/protractor');
 
 describe('workspace-project App', () => {
   let page: AppPage;
 
-  beforeEach(() => {
-    page = new AppPage();
-  });
-
-  it('should display welcome message', () => {
-    page.navigateTo();
-    expect(page.getTitleText()).toEqual('percy-ang-app app is running!');
-  });
+  it('should visually render the page', () => {
+    browser.get('http://localhost:4200')
+    percySnapshot('buttons');
+  })
 
   afterEach(async () => {
     // Assert that there are no errors emitted from the browser

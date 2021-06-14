@@ -1,1 +1,91 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: "Inter"; }
+
+/// assets path (internal)
+$path-bb-assets: "./assets";
+
+/// font path (internal)
+$path-bb-fonts: "#{$path-bb-assets}/fonts";
+
+/// Configures the default font weight
+/// @access public
+$font-weight-regular: 400 !default;
+
+/// Configures the semi-bold font-weight
+/// @access public
+$font-weight-semi-bold: 600 !default;
+
+/// Configures the bold font-weight
+/// @access public
+$font-weight-bold: 700 !default;
+
+// Global annotations
+////
+/// @group generic
+/// @access private
+////
+
+@font-face {
+  font-weight: 400;
+  font-family: "Material Icons Outlined";
+  font-style: normal;
+  src: url("#{$path-bb-fonts}/materialicons/MaterialIcons-Outlined.woff2") format("woff2"),
+    // HACK: outlined font cannot render on IE11, so defaulting to filled icons.  See ATOM-228
+      url("#{$path-bb-fonts}/materialicons/MaterialIcons-Outlined.woff") format("woff");
+}
+
+@font-face {
+  font-weight: 400;
+  font-family: "Material Icons";
+  font-style: normal;
+  src: url("#{$path-bb-fonts}/materialicons/MaterialIcons-Regular.woff2") format("woff2"),
+    url("#{$path-bb-fonts}/materialicons/MaterialIcons-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-weight: $font-weight-regular;
+  font-family: "Inter";
+  font-style: normal;
+  src: url("#{$path-bb-fonts}/Inter/Inter-Regular.woff");
+}
+
+@font-face {
+  font-weight: $font-weight-semi-bold;
+  font-family: "Inter";
+  font-style: normal;
+  src: url("#{$path-bb-fonts}/Inter/Inter-SemiBold.woff");
+}
+
+@font-face {
+  font-weight: $font-weight-bold;
+  font-family: "Inter";
+  font-style: normal;
+  src: url("#{$path-bb-fonts}/Inter/Inter-Bold.woff");
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
